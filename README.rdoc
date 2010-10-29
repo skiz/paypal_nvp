@@ -1,0 +1,35 @@
+= PayPal NVP
+
+== DESCRIPTION:
+
+This gem provides a library for accessing PayPal API via Name Value Pair (NVP) requests
+which are used to interact with PayPal.  You must have an API account to use this library
+along with a signature provided by PayPal.
+
+== FEATURES:
+
+* Easy to use and extend library for integrating with PayPal
+* Fully tested, fully documented, examples included
+* Thread safe, mother approved
+
+== PROBLEMS:
+
+* Not all of the API calls are included but can be easily added as needed
+* Request classes are not as DRY as they should be
+
+== SYNOPSIS:
+
+  account = Account.new('login','password','signature')
+  request = GetTransactionDetails(account, :sandbox => true) do |r|
+	r.transactionid = 'ABC12345'
+  end
+  request.response # actually makes the API call
+
+== REQUIREMENTS:
+
+* activesupport >= 2.0.2
+* validatable >= 1.6.7
+
+== LEGAL:
+
+Developed by Josh Martin jmartin@skizzles.net
